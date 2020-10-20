@@ -12,7 +12,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 /**
- * Description of the Class
+ * Classe da Janela da Aplicação.
  *
  * @author Osmar de Oliveira Braz Junior
  * @created 14 de Abril de 2007
@@ -31,14 +31,14 @@ public class FrmTriangulo extends JFrame {
     private JButton jBFechar;
 
     /**
-     * Constructor for the FrmTriangulo object
+     * Construtor para o objeto FrmTriangulo.
      */
     public FrmTriangulo() {
         inicializar();
     }
 
     /**
-     * Description of the Method
+     * Inicializa a janela e seus componentes. 
      */
     private void inicializar() {
         contentPane = (JPanel) this.getContentPane();
@@ -55,8 +55,7 @@ public class FrmTriangulo extends JFrame {
         contentPane.setLayout(null);
         this.setSize(new Dimension(209, 180));
         this.setTitle("Calculo Area Triangulo");
-
-        // this.setDefaultCloseOperation( WindowConstants.DISPOSE_ON_CLOSE);
+        
         this.addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
                 System.exit(0);
@@ -107,9 +106,9 @@ public class FrmTriangulo extends JFrame {
     }
 
     /**
-     * Description of the Method
+     * Realiza o cálculo da área do triângulo
      *
-     * @param e Description of the Parameter
+     * @param e Evento gerado pelo botão calcular
      */
     void jBCalcular_actionPerformed(ActionEvent e) {
         double base = Double.parseDouble(jTBase.getText());
@@ -119,9 +118,9 @@ public class FrmTriangulo extends JFrame {
     }
 
     /**
-     * Description of the Method
+     * Limpa as caixas de texto.
      *
-     * @param e Description of the Parameter
+     * @param e Evento gerado pelo botão limpar
      */
     void jBLimpar_actionPerformed(ActionEvent e) {
         jTBase.setText("");
@@ -129,9 +128,9 @@ public class FrmTriangulo extends JFrame {
     }
 
     /**
-     * Description of the Method
+     * Fecha a janela e a aplicação.
      *
-     * @param e Description of the Parameter
+     * @param e Evento gerado pelo botão fechar
      */
     void jBFechar_actionPerformed(ActionEvent e) {
         System.exit(0);
