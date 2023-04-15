@@ -2,8 +2,8 @@
 import java.awt.Dimension;
 import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
-import java.awt.event.WindowEvent;
 import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -42,6 +42,7 @@ public class FrmTriangulo extends JFrame {
      */
     private void inicializar() {
         contentPane = (JPanel) this.getContentPane();
+
         JLBase = new JLabel();
         jTBase = new JTextField();
         jLAltura = new JLabel();
@@ -54,6 +55,7 @@ public class FrmTriangulo extends JFrame {
         contentPane.setLayout(null);
         this.setSize(new Dimension(209, 180));
         this.setTitle("Calculo Area Triangulo");
+        
         this.addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
                 System.exit(0);
@@ -78,7 +80,6 @@ public class FrmTriangulo extends JFrame {
                 jBCalcular_actionPerformed(e);
             }
         });
-
         jBLimpar.setBounds(new Rectangle(111, 39, 90, 27));
         jBLimpar.setText("Limpar");
         jBLimpar.addActionListener(new java.awt.event.ActionListener() {
@@ -86,7 +87,6 @@ public class FrmTriangulo extends JFrame {
                 jBLimpar_actionPerformed(e);
             }
         });
-
         jBFechar.setBounds(new Rectangle(111, 69, 90, 27));
         jBFechar.setText("Fechar");
         jBFechar.addActionListener(new java.awt.event.ActionListener() {
@@ -95,34 +95,32 @@ public class FrmTriangulo extends JFrame {
             }
         });
 
-        contentPane.add(jTBase, null);
         contentPane.add(JLBase, null);
-        contentPane.add(jTAltura, null);
+        contentPane.add(jTBase, null);
         contentPane.add(jLAltura, null);
+        contentPane.add(jTAltura, null);
         contentPane.add(jLArea, null);
         contentPane.add(jBCalcular, null);
         contentPane.add(jBLimpar, null);
         contentPane.add(jBFechar, null);
-
     }
 
     /**
-     * Description of the Method
+     * Realiza o cálculo da área do triângulo
      *
-     * @param e Description of the Parameter
+     * @param e Evento gerado pelo botão calcular
      */
     void jBCalcular_actionPerformed(ActionEvent e) {
-        EntTriangulo triangulo = new EntTriangulo();
-        triangulo.setBase(Double.parseDouble(jTBase.getText()));
-        triangulo.setAltura(Double.parseDouble(jTAltura.getText()));
-        double area = triangulo.getArea();
+        double base = Double.parseDouble(jTBase.getText());
+        double altura = Double.parseDouble(jTAltura.getText());
+        double area = (base * altura) / 2;
         jLArea.setText("Area :" + area);
     }
 
     /**
-     * Description of the Method
+     * Limpa as caixas de texto.
      *
-     * @param e Description of the Parameter
+     * @param e Evento gerado pelo botão limpar
      */
     void jBLimpar_actionPerformed(ActionEvent e) {
         jTBase.setText("");
@@ -130,24 +128,11 @@ public class FrmTriangulo extends JFrame {
     }
 
     /**
-     * Description of the Method
+     * Fecha a janela e a aplicação.
      *
-     * @param e Description of the Parameter
+     * @param e Evento gerado pelo botão fechar
      */
     void jBFechar_actionPerformed(ActionEvent e) {
         System.exit(0);
     }
-
-    /**
-     * Description of the Method
-     *
-     * @param e Description of the Parameter
-     */
-    protected void processWindowEvent(WindowEvent e) {
-        super.processWindowEvent(e);
-        if (e.getID() == WindowEvent.WINDOW_CLOSING) {
-            System.exit(0);
-        }
-    }
-
 }

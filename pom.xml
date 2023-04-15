@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com</groupId>
-    <artifactId>triangulo2c</artifactId>
+    <artifactId>triangulo1c</artifactId>
     <version>1</version>
     <packaging>jar</packaging>   
      
@@ -94,5 +94,5 @@
             
         </plugins>        
     </build>
-    <name>triangulo2c</name>
+    <name>triangulo1c</name>
 </project>
