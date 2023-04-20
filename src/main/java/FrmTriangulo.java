@@ -38,7 +38,7 @@ public class FrmTriangulo extends JFrame {
     }
 
     /**
-     * Inicializa a janela e seus componentes. 
+     * Inicializa a janela e seus componentes.
      */
     private void inicializar() {
         contentPane = (JPanel) this.getContentPane();
@@ -55,7 +55,7 @@ public class FrmTriangulo extends JFrame {
         contentPane.setLayout(null);
         this.setSize(new Dimension(209, 180));
         this.setTitle("Calculo Area Triangulo");
-        
+
         this.addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
                 System.exit(0);
